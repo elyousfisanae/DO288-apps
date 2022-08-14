@@ -30,7 +30,7 @@
     $row = mysqli_fetch_array($result);
     mysqli_free_result($result);
 
-    print $row[0] . "\n";
+    print $HELLO_MESSAGE . "\n";
     
     mysqli_close($link);
 ?>

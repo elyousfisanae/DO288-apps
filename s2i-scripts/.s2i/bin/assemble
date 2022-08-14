@@ -10,9 +10,16 @@ config_s2i
 
 ######## CUSTOMIZATION STARTS HERE ############
 
-cp /tmp/src/*.html ./
+echo "---> Installing application source"
 
-######## CUSTOMIZATION ENDS HERE ############
+cp -Rf /tmp/src/*.html ./
+
+DATE="date +%Y-%m-%d"
+
+echo "Application build on $DATE" >> ./info.html
+echo "Apllication build by SanAE $HTTPD_VERSION" >> ./info.html
+
+####### CUSTOMIZATION ENDS HERE ############
 
 if [ -d ./httpd-cfg ]; then
   echo "---> Copying httpd configuration files..."
